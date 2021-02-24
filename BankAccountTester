@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class BankAccountTester {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		double amount = 0;
+		System.out.println("What is the starting balance of your bank account? : ");
+		amount = in.nextDouble();
+		BankAccount myBankAccount = new BankAccount(amount);
+		System.out.println("How much are you going to withdraw? : ");
+		double withdrawAmt = in.nextDouble();
+		myBankAccount.withdraw(withdrawAmt);
+
+		System.out.println("How much are you going to deposit? : ");
+		double depositAmt = in.nextDouble();
+		myBankAccount.deposit(depositAmt);
+
+		System.out.println("Your balance is  " + myBankAccount.getBalance());
+	}
+}
+
+
