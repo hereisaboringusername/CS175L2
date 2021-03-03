@@ -1,21 +1,36 @@
 import java.util.Scanner;
 public class BankAccountTester {
 
-	public static void main(String[] args) {
+	public static void main(String[] args, char[] interestAmount) {
 		Scanner in = new Scanner(System.in);
-		double amount = 0;
-		System.out.println("What is the starting balance of your bank account? : ");
-		amount = in.nextDouble();
-		BankAccount myBankAccount = new BankAccount(amount);
-		System.out.println("How much are you going to withdraw? : ");
-		double withdrawAmt = in.nextDouble();
-		myBankAccount.withdraw(withdrawAmt);
-
-		System.out.println("How much are you going to deposit? : ");
-		double depositAmt = in.nextDouble();
-		myBankAccount.deposit(depositAmt);
-
-		System.out.println("Your balance is  " + myBankAccount.getBalance());
+		
+		String startAmount = "Enter amount to start the account: ";
+		System.out.println(startAmount);
+		String Startamount = in.nextLine();
+		
+		String interestrate = "Enter the interest rate for this account : ";
+		System.out.println(interestrate);
+		String Interestrate = in.nextLine();
+		System.out.println("Created new account with :" + Startamount + "balance and interest rate :" + Interestrate );
+		
+		String depositAmount = "Enter amount to deposit in the account: ";
+		System.out.println(depositAmount);
+		String Depositamount = in.nextLine();
+		
+		String withdrawAmount = "Enter amount to withdraw from the account: ";
+		int x = 0;
+		System.out.println(x>2999);
+		String WithdrawAmount = in.nextLine();
+		System.out.println(" Insufficient Funds to support withdrawal : ");
+		
+		String newwithdrawAmount = "Enter amount to withdraw in the account: ";
+		System.out.println(newwithdrawAmount);
+		myBankAccount.withdraw(in.nextDouble());
+		
+		System.out.println("If you want me to generate interest, enter 'Yes' : \n1.Yes\n2.No ");
+		myBankAccount.getinterest(in.next());
+	
+		
 	}
 }
 
