@@ -1,0 +1,103 @@
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
+public class RoachSimulation {
+
+	// class
+	// starting population
+	public static void main(String[] args) {
+		String input = JOptionPane.showInputDialog("Enter starting roach population:");
+		int initialPop = (int) Double.parseDouble(input);
+		// parseDouble() method of Java Double class is a built in method in Java that
+		// returns
+		// a new double initialized to the value represented by the specified String, as
+		// done
+		// by the valueOf method of class Double; stores the value represented by the
+		// string
+
+		// make RoachPopulation object named bugs using
+		RoachPopulation bugs = new RoachPopulation(initialPop); // object
+		// DecimalFormat formats decimal numbers
+		// remember this format because this helps the JOption save the numbers you
+		// plugged in
+		DecimalFormat wholeFormat = new DecimalFormat("0");
+
+		DecimalFormat pctFormat = new DecimalFormat("00%");
+		// percentage after the 0 means the percent in which the population will
+		// decrease
+
+		// JOptionPane will show the Message Dialog, telling the user what the initial
+		// roach population is.
+		JOptionPane.showMessageDialog(null,
+				"The initial roach population is  " + wholeFormat.format(bugs.getRoaches()));
+
+		// cycle is an integer, starting with one
+		int cycle = 1;
+		// insert while loop
+		// while bugs is greater than zero method
+
+		if (bugs.getRoaches() > 0) {
+			bugs.breed(); // Is bugs.breed a method?
+			// null is just part of the JOptionPane.showMessageDialog that I have to
+			// memorize
+
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " breeding is : "
+					+ wholeFormat.format(bugs.getRoaches()));
+			String spray = JOptionPane.showInputDialog("Enter spray percentage for cycle " + cycle + " ");
+			double sprayPct = Double.parseDouble(spray);
+			bugs.spray(sprayPct);
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " "
+					+ pctFormat.format(sprayPct) + " spraying is " + wholeFormat.format(bugs.getRoaches()));
+			cycle++;
+		}
+
+		if (bugs.getRoaches() > 0) {
+			bugs.breed(); // Is bugs.breed a method?
+			// null is just part of the JOptionPane.showMessageDialog that I have to memorize
+		
+
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " breeding is : "
+					+ wholeFormat.format(bugs.getRoaches()));
+          
+			String spray = JOptionPane.showInputDialog("Enter spray percentage for cycle " + cycle + " ");
+			double sprayPct = Double.parseDouble(spray);
+			bugs.spray(sprayPct);
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " " + pctFormat.format(sprayPct) + " spraying is " + wholeFormat.format(bugs.getRoaches()));
+			cycle++;
+		}
+    
+		if (bugs.getRoaches() > 0) {
+			bugs.breed(); // Is bugs.breed a method?
+			// null is just part of the JOptionPane.showMessageDialog that I have to
+			// memorize
+
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " breeding is : "
+					+ wholeFormat.format(bugs.getRoaches()));
+			String spray = JOptionPane.showInputDialog("Enter spray percentage for cycle " + cycle + " ");
+			double sprayPct = Double.parseDouble(spray);
+			bugs.spray(sprayPct);
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " "
+					+ pctFormat.format(sprayPct) + " spraying is " + wholeFormat.format(bugs.getRoaches()));
+			cycle++;
+		}
+
+		if (bugs.getRoaches() > 0) {
+			bugs.breed(); 
+			// null is just part of the JOptionPane.showMessageDialog that I have to
+			// memorize
+
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " breeding is : "
+					+ wholeFormat.format(bugs.getRoaches()));
+			String spray = JOptionPane.showInputDialog("Enter spray percentage for cycle " + cycle + " ");
+			double sprayPct = Double.parseDouble(spray);
+			bugs.spray(sprayPct);
+			JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " "
+					+ pctFormat.format(sprayPct) + " spraying is " + wholeFormat.format(bugs.getRoaches()));
+			cycle++;
+		}
+
+		JOptionPane.showMessageDialog(null, "You have killed all of the roaches! There are no more roaches left.");
+
+
+	}
+}
