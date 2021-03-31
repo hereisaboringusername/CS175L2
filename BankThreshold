@@ -3,22 +3,27 @@ public class BankThreshold {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in); //insert Scanner
 		//Enter starting balance of your bank account
+		
 		System.out.println("Please enter the starting balance of your bank account: ");
+		
 		//Enter interest rate for your bank account
 		System.out.println("Please enter the set interest rate for your bank account: ");
+		
 		BankAccount myBankAccount = new BankAccount(in.nextDouble(), in.nextDouble());
+		
 		//set interval for months
 		int months = 0;
 		System.out.println("Please enter a threshold amount:");
 		
 		//insert while loop
 		while(in.hasNextDouble()) {
-			double threshold = in.nextDouble();
-			while(myBankAccount.balance <= threshold) {
+			double bankingthreshold = in.nextDouble();
+			while(myBankAccount.balance <= bankingthreshold) {
 				myBankAccount.calcInterest(); // I use this method because it calculates the  interest 
 				months++; //interval
 			}
-			System.out.println("It will take " + months + " months in order to reach: " + threshold);
+			System.out.println("It will take " + months + " months in order to reach: " + bankingthreshold);
+	         System.out.println("Please Enter 'End'");
 		}
 
 }
