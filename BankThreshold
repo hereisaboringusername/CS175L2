@@ -15,8 +15,8 @@ public class BankThreshold {
 		int months = 0;
 		System.out.println("Please enter a threshold amount:");
 		
-		//insert while loop
-		while(in.hasNextDouble()) {
+		//insert for loop
+		for(in.hasNextDouble()) {
 			double bankingthreshold = in.nextDouble();
 			while(myBankAccount.balance <= bankingthreshold) {
 				myBankAccount.calcInterest(); // I use this method because it calculates the  interest 
