@@ -3,28 +3,33 @@ public class BankThreshold {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in); //insert Scanner
 		//Enter starting balance of your bank account
-		
-		System.out.println("Please enter the starting balance of your bank account: ");
+		System.out.println("Please enter the initial balance of your bank account: ");
 		
 		//Enter interest rate for your bank account
-		System.out.println("Please enter the set interest rate for your bank account: ");
-		
-		BankAccount myBankAccount = new BankAccount(in.nextDouble(), in.nextDouble());
-		
+		System.out.println("Please enter the set interest rate percentage for your bank account: ");
+		int bal= in.nextInt();
+		BankAccount myBankAccount = new BankAccountStudent(bal,intPct);
 		//set interval for months
-		int months = 0;
-		System.out.println("Please enter a threshold amount:");
-		
-		//insert for loop
-		for(in.hasNextDouble()) {
-			double bankingthreshold = in.nextDouble();
-			while(myBankAccount.balance <= bankingthreshold) {
+		 months = 0;
+		System.out.println("Enter the  threshold amount for your account balance to reach or 'End':");
+		//insert while loop
+		while(in.hasNextDouble()) {
+		{
+			//months++; //adds on to month
+		       // System.out.println("Enter the  threshold amount for your account balance to reach or 'End':");
+			double threshold = in.nextDouble();
+			months = 0;
+			while(myBankAccount.getBalance() < threshold) {
+			{
+				months++;
 				myBankAccount.calcInterest(); // I use this method because it calculates the  interest 
-				months++; //interval
+				//System.out.println(myBankAccount.getBalance());
+				
 			}
+			myBankAccount.restoreOpeningBalance(bal); 
+			// restores original balance of the account and sets up for next calculation
 			System.out.println("In " + months + " months you will be able to reach: " + bankingthreshold);
-	         System.out.println("Please Enter 'End'");
+                        System.out.println("Enter the  threshold amount for your account balance to reach or 'E
 		}
-
 }
 
