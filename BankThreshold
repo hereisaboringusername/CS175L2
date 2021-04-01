@@ -22,7 +22,7 @@ public class BankThreshold {
 				myBankAccount.calcInterest(); // I use this method because it calculates the  interest 
 				months++; //interval
 			}
-			System.out.println("It will take " + months + " months in order to reach: " + bankingthreshold);
+			System.out.println("It will take " + months + " months so that you could reach: " + bankingthreshold);
 	         System.out.println("Please Enter 'End'");
 		}
 
