@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+public class CreditCardInput {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String CardNumber = "";
+
+		while(true) {
+			JOptionPane.showInputDialog("Input a card number or please enter \"quit\" to quit this program: ");
+			CardNumber = scan.nextLine();
+			if (CardNumber.toLowerCase().equals("quit")) {
+				System.out.println("Goodbye");
+				break;
+			}
+
+			for(int card=0; card<CardNumber.length() ;card++) {
+				if (CardNumber.substring(card,card+1).equals("-") || CardNumber.substring(card,card+1).equals(" ")) {
+					String 1 = CardNumber.substring(0,card);
+					String 2 = CardNumber.substring(card+1);
+					CardNumber = 1 + 2;
+					--card;
+				}
+			}
+			JOptionPane.showMessageDialog(null,CardNumber + "is your result.");
+		}
+	}
+		
+	
