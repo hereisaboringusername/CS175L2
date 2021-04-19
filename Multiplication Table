@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class MultiplicationTable {
+
+	public static void main(String[] args) {
+		// Scanners allow to plug in and input variables.
+		Scanner scan = new Scanner(System.in);
+		int width,height;
+		//This piece of code inputs the width and height of the multiplication table.
+		System.out.print("What is the width of the multiplication table? Please input: ");
+		width = scan.nextInt();
+
+		System.out.print("What is the height of the multiplication table? Please input:  ");
+		height = scan.nextInt();
+		//For loop fits better for this project.
+		for(int i=1;i<=height;i++) {
+			String line = "";
+			for(int j=1;j<=width;j++) {
+				line+= i*j+ "\t";
+			}
+			System.out.println(line);
+		}
+	}
+
+}
