@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+
+public class BankAccountTester2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Creation of 1st Gil account
+		BankAccount gil = new BankAccount("Gil",500);
+		//Creation of 2nd Joe account
+		BankAccount joe = new BankAccount("Joe",1000);
+		//Creation of 3rd Fred account
+		BankAccount fred = new BankAccount("Fred",2000);
+		//Creation of 4th Sally Account
+		BankAccount sally = new BankAccount("Sally",2500);
+
+		// This is when we create the Array
+		ArrayList<BankAccount> accountList = new ArrayList<>();
+		// Add Gil to Array List
+		accountList.add(gil);
+		//Add Joe to Array List
+		accountList.add(joe);
+		//Add Fred to Array List
+		accountList.add(fred);
+		// All these accounts get inputed and printed on the array
+		for(BankAccount account : accountList) {
+			System.out.println(account.getAccount());
+		}
+		// We add Sally twice
+		accountList.add(sally);
+
+		// Variables were assigned for the highest balance to fit the project requirements
+		double highestBal = accountList.get(0).getBalance();
+		//variable for highest position; highestPos means highest postion
+		int highestPos = 0;
+
+		// This is a for loop
+		for(int i=1; i < accountList.size(); i++) {
+			if (highestBal < accountList.get(i).getBalance()) {
+				highestBal = accountList.get(i).getBalance();
+				highestPos = i;
+			}
+		}
+
+		// This method prints out the highest balance of the account
+		System.out.println(accountList.get(highestPos).getAccount());
+
+		// We remove Sally to meet the project requirements 
+		accountList.remove(sally);
+		highestBal = accountList.get(0).getBalance();
+		highestPos = 0;
+        //for loop and if statement
+		for(int i=1; i < accountList.size(); i++) {
+			if (highestBal < accountList.get(i).getBalance()) {
+				highestBal = accountList.get(i).getBalance();
+				highestPos = i;
+			}
+		}
+
+		
+		System.out.println(accountList.get(highestPos).getAccount());
+	}
