@@ -1,0 +1,31 @@
+import java.util.Random;
+
+public class Randomarrayandsearch {
+
+	static int values;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Random generator = new Random();
+		int[] ranDom = new int[50];
+
+		for (int i = 0; i < ranDom.length; i++) {
+			ranDom[i] = 1 + generator.nextInt(25);
+
+			System.out.println(ranDom[i] + ",");
+		}
+
+		double largestvalue = ranDom[0];
+		double smallestvalue = ranDom[0];
+		for (int i = 1; i < ranDom.length; i++) {
+			if (ranDom[i] > largestvalue)
+				largestvalue = ranDom[i];
+			if (ranDom[i] < smallestvalue)
+				smallestvalue = ranDom[i];
+		}
+		System.out.println("\nThe largest element in the array is : " + largestvalue);
+		System.out.println("The smallest element in the array is : " + smallestvalue);
+		System.out.println("The product of the smallest and largest is :" + largestvalue * smallestvalue);
+	}
+
+}
